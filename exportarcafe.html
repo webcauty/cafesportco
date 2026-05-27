@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaféExport CO | Premium Export Logistics</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Playfair Display para títulos elegantes y Plus Jakarta Sans para el cuerpo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Tipografías Premium */
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        body, input, select, button {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Estilos personalizados para emular texturas y relieves metálicos de la imagen */
+        .bg-premium-dark {
+            background-color: #03140e;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(7, 56, 43, 0.45) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(43, 27, 18, 0.4) 0%, transparent 50%);
+        }
+
+        .gold-border {
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            box-shadow: inset 0 0 12px rgba(197, 160, 89, 0.05);
+        }
+
+        .gold-border-heavy {
+            border: 2px solid #c5a059;
+            background: linear-gradient(135deg, #18110b 0%, #2b1b12 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(197, 160, 89, 0.15);
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f3e8d2 0%, #c5a059 50%, #9e7d3b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #dfb667 0%, #c5a059 50%, #a67c52 100%);
+        }
+
+        /* Efecto de Cristal Esmeralda (Glassmorphism de lujo) */
+        .emerald-glass {
+            background: rgba(4, 24, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Animaciones */
+        @keyframes pulse-emerald {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(17, 202, 160, 0.5), 0 0 15px rgba(197, 160, 89, 0.2); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(17, 202, 160, 0), 0 0 25px rgba(197, 160, 89, 0.4); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(17, 202, 160, 0), 0 0 15px rgba(197, 160, 89, 0.2); }
+        }
+
+        .animate-premium-wa {
+            animation: pulse-emerald 2.5s infinite;
+        }
+
+        /* Dash array para la ruta de mapa animada */
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -40;
+            }
+        }
+        .route-line {
+            stroke-dasharray: 8, 4;
+            animation: dash 2s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-premium-dark text-[#f3f0df] min-h-screen relative overflow-x-hidden selection:bg-[#c5a059] selection:text-[#03140e]">
+
+    <!-- Encabezado / Navbar -->
+    <header class="border-b border-[#c5a059]/15 backdrop-blur-md sticky top-0 z-50 bg-[#03140e]/90">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl font-serif font-bold tracking-widest text-gold-gradient">CaféExport CO</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-xs font-semibold tracking-widest uppercase">
+                <a href="#inicio" class="text-white hover:text-[#dfb667] transition">Home</a>
+                <a href="#experiencia" class="text-stone-400 hover:text-[#dfb667] transition">Experiencia</a>
+                <a href="#origen" class="text-stone-400 hover:text-[#dfb667] transition">Regiones</a>
+                <a href="#simulador" class="text-stone-400 hover:text-[#dfb667] transition">Simulador</a>
+                <a href="#contacto" class="text-stone-400 hover:text-[#dfb667] transition">Contacto</a>
+            </nav>
+            <a href="#simulador" class="gold-border text-[#dfb667] hover:bg-[#c5a059] hover:text-black transition text-xs font-semibold tracking-widest uppercase px-5 py-2.5 rounded-sm">
+                Cotizar Carga
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- COLUMNA IZQUIERDA: Hero, Ruta de Experiencia y Fincas Destacadas -->
+        <div class="lg:col-span-6 space-y-12">
+            
+            <!-- Hero Text -->
+            <div class="space-y-4">
+                <span class="text-xs uppercase tracking-widest text-[#dfb667] font-semibold flex items-center gap-2">
+                    <span class="h-1.5 w-1.5 rounded-full bg-[#11caa0] inline-block animate-ping"></span>
+                    Logística Internacional Exclusiva
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-normal text-white leading-tight">
+                    Exportación de <br>
+                    <span class="text-gold-gradient font-bold">Café de Colombia</span> <br>
+                    a Estados Unidos
+                </h1>
+                <p class="text-stone-400 text-sm md:text-base font-light leading-relaxed max-w-xl">
+                    Conectamos la tradición y el alma de las mejores fincas colombianas con los tostadores más exigentes de Norteamérica, garantizando pureza de origen y trazabilidad premium.
+                </p>
+            </div>
+
+            <!-- Experiencia Progress Section -->
+            <div class="emerald-glass p-6 rounded-2xl gold-border space-y-6">
+                <div class="flex items-center justify-between border-b border-[#c5a059]/10 pb-4">
+                    <span class="text-xs uppercase tracking-widest text-[#dfb667] font-bold">Proceso de Exportación</span>
+                    <span class="text-xs text-stone-400">Paso a Paso</span>
+                </div>
+                
+                <div class="relative flex items-center justify-between">
+                    <!-- Línea de Conexión del Progreso -->
+                    <div class="absolute left-0 right-0 top-1/2 h-[2px] bg-gradient-to-r from-[#9e7d3b] via-[#c5a059] to-emerald-800 -translate-y-1/2 z-0"></div>
+                    
+                    <div class="relative z-10 flex flex-col items-center text-center">
+                        <div class="w-10 h-10 rounded-full bg-[#2b1b12] gold-border flex items-center justify-center text-xs text-[#dfb667] font-bold">01</div>
+                        <span class="text-[11px] uppercase tracking-wider text-[#dfb667] font-bold mt-2">Origen</span>
+                    </div>
+                    <div class="relative z-10 flex flex-col items-center text-center">
+                        <div class="w-10 h-10 rounded-full bg-[#2b1b12] gold-border flex items-center justify-center text-xs text-[#dfb667] font-bold">02</div>
+                        <span class="text-[11px] uppercase tracking-wider text-[#dfb667] font-bold mt-2">Trámites</span>
+                    </div>
+                    <div class="relative z-10 flex flex-col items-center text-center">
+                        <div class="w-10 h-10 rounded-full bg-[#041812] border-2 border-[#11caa0] flex items-center justify-center text-xs text-white font-bold shadow-[0_0_10px_rgba(17,202,160,0.4)]">03</div>
+                        <span class="text-[11px] uppercase tracking-wider text-white font-bold mt-2">Puerto USA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fincas/Regiones Destacadas -->
+            <div id="origen" class="space-y-6">
+                <h2 class="text-2xl text-white font-semibold flex items-center gap-3">
+                    <i class="fa-solid fa-seedling text-[#dfb667] text-lg"></i> Regiones de Origen Seleccionado
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <!-- Región 1 -->
+                    <div class="gold-border-heavy p-5 rounded-xl flex flex-col justify-between h-44 relative overflow-hidden group hover:border-[#dfb667] transition duration-300">
+                        <div class="absolute -right-6 -bottom-6 text-stone-800/10 text-8xl font-serif pointer-events-none group-hover:scale-110 transition duration-300">N</div>
+                        <div>
+                            <span class="bg-emerald-950 text-[#11caa0] border border-emerald-800/50 text-[10px] uppercase tracking-wider font-extrabold px-2.5 py-0.5 rounded-full inline-block mb-3">Premium</span>
+                            <h3 class="text-lg font-bold text-white">Nariño</h3>
+                            <p class="text-[11px] text-[#c5a059] font-medium tracking-wide">Café Volcánico / Alta Acidez</p>
+                        </div>
+                        <span class="text-xs text-stone-400 mt-2 hover:text-white transition cursor-pointer">Detalles <i class="fa-solid fa-arrow-right text-[10px] ml-1 text-[#dfb667]"></i></span>
+                    </div>
+                    <!-- Región 2 -->
+                    <div class="gold-border-heavy p-5 rounded-xl flex flex-col justify-between h-44 relative overflow-hidden group hover:border-[#dfb667] transition duration-300">
+                        <div class="absolute -right-6 -bottom-6 text-stone-800/10 text-8xl font-serif pointer-events-none group-hover:scale-110 transition duration-300">H</div>
+                        <div>
+                            <span class="bg-emerald-950 text-[#11caa0] border border-emerald-800/50 text-[10px] uppercase tracking-wider font-extrabold px-2.5 py-0.5 rounded-full inline-block mb-3">Premium</span>
+                            <h3 class="text-lg font-bold text-white">Huila</h3>
+                            <p class="text-[11px] text-[#c5a059] font-medium tracking-wide">Notas Frutales y Dulces</p>
+                        </div>
+                        <span class="text-xs text-stone-400 mt-2 hover:text-white transition cursor-pointer">Detalles <i class="fa-solid fa-arrow-right text-[10px] ml-1 text-[#dfb667]"></i></span>
+                    </div>
+                    <!-- Región 3 -->
+                    <div class="gold-border-heavy p-5 rounded-xl flex flex-col justify-between h-44 relative overflow-hidden group hover:border-[#dfb667] transition duration-300">
+                        <div class="absolute -right-6 -bottom-6 text-stone-800/10 text-8xl font-serif pointer-events-none group-hover:scale-110 transition duration-300">S</div>
+                        <div>
+                            <span class="bg-emerald-950 text-[#11caa0] border border-emerald-800/50 text-[10px] uppercase tracking-wider font-extrabold px-2.5 py-0.5 rounded-full inline-block mb-3">Premium</span>
+                            <h3 class="text-lg font-bold text-white">Santander</h3>
+                            <p class="text-[11px] text-[#c5a059] font-medium tracking-wide">Cuerpo Balanceado / Herbal</p>
+                        </div>
+                        <span class="text-xs text-stone-400 mt-2 hover:text-white transition cursor-pointer">Detalles <i class="fa-solid fa-arrow-right text-[10px] ml-1 text-[#dfb667]"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beneficios de Valor -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                <div class="gold-border-heavy p-4 rounded-xl text-center flex flex-col items-center justify-center space-y-2">
+                    <div class="w-10 h-10 rounded-full bg-[#1e130c] border border-[#dfb667]/30 flex items-center justify-center text-lg text-[#dfb667]">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <span class="text-xs font-bold tracking-wider text-white uppercase block">100% Asegurado</span>
+                </div>
+                <div class="gold-border-heavy p-4 rounded-xl text-center flex flex-col items-center justify-center space-y-2">
+                    <div class="w-10 h-10 rounded-full bg-[#1e130c] border border-[#dfb667]/30 flex items-center justify-center text-lg text-[#dfb667]">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <span class="text-xs font-bold tracking-wider text-white uppercase block">Gestión Aduanera</span>
+                </div>
+                <div class="gold-border-heavy p-4 rounded-xl text-center flex flex-col items-center justify-center space-y-2">
+                    <div class="w-10 h-10 rounded-full bg-[#1e130c] border border-[#dfb667]/30 flex items-center justify-center text-lg text-[#dfb667]">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <span class="text-xs font-bold tracking-wider text-white uppercase block">Rutas Óptimas</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COLUMNA DERECHA: Mapa de Ruta SVG y Simulador de Costos Avanzado -->
+        <div class="lg:col-span-6 space-y-12">
+            
+            <!-- Mapa Visual de Conexión de Ruta -->
+            <div class="emerald-glass p-6 rounded-2xl gold-border relative overflow-hidden">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs uppercase tracking-widest text-[#dfb667] font-bold">Rutas Marítimas y Aéreas</span>
+                    <span class="text-xs bg-[#11caa0]/10 text-[#11caa0] border border-[#11caa0]/20 px-2 py-0.5 rounded-full">Activo</span>
+                </div>
+                
+                <!-- SVG de Conexión de Mapa Interactivo (Colombia -> USA) -->
+                <svg viewBox="0 0 500 240" class="w-full h-auto drop-shadow-[0_0_15px_rgba(17,202,160,0.2)]">
+                    <defs>
+                        <!-- Gradientes del mapa -->
+                        <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#2a1b12" />
+                            <stop offset="100%" stop-color="#18110b" />
+                        </linearGradient>
+                        <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#dfb667" />
+                            <stop offset="50%" stop-color="#11caa0" />
+                            <stop offset="100%" stop-color="#c5a059" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Siluetas Abstractas del Mapa de América -->
+                    <!-- Colombia (Sur) -->
+                    <path d="M 80 180 C 100 160, 110 180, 130 190 C 140 200, 120 220, 100 230 C 80 210, 70 200, 80 180 Z" fill="url(#mapGradient)" stroke="#c5a059" stroke-width="1.5" />
+                    <!-- Estados Unidos (Norte) -->
+                    <path d="M 120 30 L 380 30 C 420 50, 410 90, 440 100 C 430 120, 360 110, 350 140 L 220 140 C 180 140, 160 120, 140 110 C 110 100, 100 60, 120 30 Z" fill="url(#mapGradient)" stroke="#c5a059" stroke-width="1.5" />
+
+                    <!-- Ciudades marcadas -->
+                    <!-- Colombia (Bogotá / Puertos) -->
+                    <circle cx="105" cy="195" r="5" fill="#11caa0" class="animate-pulse" />
+                    <text x="115" y="200" fill="#f3f0df" font-size="10" font-weight="bold">Colombia (Origen)</text>
+
+                    <!-- USA (Nueva York) -->
+                    <circle cx="390" cy="85" r="5" fill="#dfb667" />
+                    <text x="330" y="80" fill="#f3f0df" font-size="9">Nueva York</text>
+
+                    <!-- USA (Miami) -->
+                    <circle cx="330" cy="120" r="5" fill="#dfb667" />
+                    <text x="340" y="125" fill="#f3f0df" font-size="9">Miami</text>
+
+                    <!-- Línea de Conexión de Envío -->
+                    <!-- Ruta Miami -->
+                    <path d="M 105 195 Q 210 140, 330 120" fill="none" stroke="url(#routeGradient)" stroke-width="2.5" class="route-line" />
+                    <!-- Ruta NY -->
+                    <path d="M 105 195 Q 230 110, 390 85" fill="none" stroke="rgba(197, 160, 89, 0.4)" stroke-width="1.5" stroke-dasharray="5, 5" />
+                </svg>
+            </div>
+
+            <!-- SIMULADOR PREMIUM -->
+            <div id="simulador" class="emerald-glass rounded-2xl gold-border overflow-hidden">
+                <div class="p-6 bg-gradient-to-r from-[#110d0a] to-[#251811] border-b border-[#c5a059]/15">
+                    <h2 class="text-2xl font-bold text-white tracking-wide">Calculador Estimado de Envíos</h2>
+                    <p class="text-xs text-stone-400 mt-1">Configure los parámetros de carga para cotizar el flete internacional instantáneamente.</p>
+                </div>
+
+                <div class="p-6 md:p-8 space-y-6">
+                    
+                    <!-- Formulario de Inputs -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <!-- Sacos -->
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-2">Sacos (70kg c/u)</label>
+                            <div class="relative">
+                                <input type="number" id="sacosCount" value="50" min="1" class="w-full bg-[#03140e] border border-[#c5a059]/30 rounded-lg py-2.5 px-4 text-white font-semibold focus:outline-none focus:border-[#dfb667] focus:ring-1 focus:ring-[#dfb667]" oninput="calcularTarifas()">
+                            </div>
+                        </div>
+
+                        <!-- Destinos -->
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-2">Puerto de Destino</label>
+                            <select id="puertoDestino" class="w-full bg-[#03140e] border border-[#c5a059]/30 rounded-lg py-2.5 px-4 text-white font-semibold focus:outline-none focus:border-[#dfb667]" onchange="calcularTarifas()">
+                                <option value="miami" data-base="12.50">Miami, Florida (FCL)</option>
+                                <option value="ny" data-base="19.80">New York / NJ (FCL)</option>
+                                <option value="houston" data-base="16.20">Houston, Texas (FCL)</option>
+                            </select>
+                        </div>
+
+                        <!-- Tipo Envío -->
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-2">Tipo de Tránsito</label>
+                            <select id="tipoTransito" class="w-full bg-[#03140e] border border-[#c5a059]/30 rounded-lg py-2.5 px-4 text-white font-semibold focus:outline-none focus:border-[#dfb667]" onchange="calcularTarifas()">
+                                <option value="maritimo">Marítimo de Alta Gama</option>
+                                <option value="aereo">Aéreo Expreso Express</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Grilla de Métricas Desglosadas -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-2">
+                        <!-- Métrica 1 -->
+                        <div class="bg-[#03140e]/50 border border-[#c5a059]/10 p-3.5 rounded-xl text-center">
+                            <span class="block text-[10px] uppercase tracking-widest text-stone-400">Peso Total Neto</span>
+                            <span class="text-base font-bold text-white mt-1 block" id="valPeso">3,500 kg</span>
+                        </div>
+                        <!-- Métrica 2 -->
+                        <div class="bg-[#03140e]/50 border border-[#c5a059]/10 p-3.5 rounded-xl text-center">
+                            <span class="block text-[10px] uppercase tracking-widest text-stone-400">Est. Tránsito</span>
+                            <span class="text-base font-bold text-white mt-1 block" id="valTiempo">12 - 14 Días</span>
+                        </div>
+                        <!-- Métrica 3 -->
+                        <div class="bg-[#03140e]/50 border border-[#c5a059]/10 p-3.5 rounded-xl text-center">
+                            <span class="block text-[10px] uppercase tracking-widest text-stone-400">Compensación CO2</span>
+                            <span class="text-base font-bold text-[#11caa0] mt-1 block">100% Sostenible</span>
+                        </div>
+                        <!-- Métrica 4 -->
+                        <div class="bg-[#03140e]/50 border border-[#c5a059]/10 p-3.5 rounded-xl text-center">
+                            <span class="block text-[10px] uppercase tracking-widest text-stone-400">Trámites e Impuestos</span>
+                            <span class="text-xs font-bold text-amber-500 mt-1 block">FNC & FDA Incluidos</span>
+                        </div>
+                        <!-- Métrica 5 -->
+                        <div class="bg-[#03140e]/50 border border-[#c5a059]/10 p-3.5 rounded-xl text-center">
+                            <span class="block text-[10px] uppercase tracking-widest text-stone-400">Tarifa Flete Base</span>
+                            <span class="text-base font-bold text-white mt-1 block" id="valFlete">$625.00 USD</span>
+                        </div>
+                        <!-- Métrica 6 -->
+                        <div class="bg-[#03140e]/50 border border-[#c5a059]/10 p-3.5 rounded-xl text-center">
+                            <span class="block text-[10px] uppercase tracking-widest text-stone-400">Logística de Origen</span>
+                            <span class="text-base font-bold text-white mt-1 block" id="valLogistica">$350.00 USD</span>
+                        </div>
+                    </div>
+
+                    <!-- Bloque Destacado de Gran Total (Vintage Luxury Badge) -->
+                    <div class="gold-border-heavy p-6 rounded-2xl text-center relative overflow-hidden flex flex-col items-center justify-center">
+                        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                        <span class="text-[10px] uppercase tracking-widest text-[#dfb667] font-bold mb-1">TOTAL ESTIMADO LOGÍSTICA (CIF)</span>
+                        <div class="text-4xl md:text-5xl font-serif font-black text-gold-gradient tracking-wide" id="valTotal">
+                            $975.00 USD
+                        </div>
+                        <p class="text-[10px] text-stone-400 mt-2 italic">Aproximación FOB / CIF sujeta a tarifas aduaneras dinámicas de la semana.</p>
+                    </div>
+
+                    <!-- Botón de Acción -->
+                    <div class="text-center">
+                        <a href="https://wa.me/14722749633?text=Hola,%20acabo%20de%20realizar%20una%20simulaci%C3%B3n%20para%20un%20env%C3%ADo%20de%20caf%C3%A9%20a%20USA.%20Quiero%20formalizar%20una%20cotizaci%C3%B3n." target="_blank" class="bg-gold-gradient text-black hover:bg-white hover:text-black transition-all w-full py-4 rounded-xl font-bold tracking-widest uppercase text-xs inline-block shadow-lg shadow-[#c5a059]/20">
+                            Confirmar Envío con un Asesor <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto" class="border-t border-[#c5a059]/15 bg-[#020e0a] py-12 px-6 text-center text-sm text-stone-400 space-y-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <span class="font-serif text-lg font-bold text-gold-gradient tracking-widest">CaféExport CO</span>
+            <p class="text-xs">&copy; 2026 Café Export Colombia. Todos los derechos reservados. Logística Directa para Café Verde y Tostado.</p>
+            <div class="flex space-x-6 text-stone-400 text-lg">
+                <a href="#" class="hover:text-[#dfb667] transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-[#dfb667] transition"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP ANIMADO PREMIUM -->
+    <!-- Recreación exacta del estilo de la imagen: forma poligonal/hexagonal con bordes de luz dorada y verde vibrante -->
+    <a href="https://wa.me/14722749633?text=Hola!%20Deseo%20cotizar%20el%20env%C3%ADo%20de%20una%20carga%20de%20caf%C3%A9%20Premium%20a%20Estados%20Unidos." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 flex items-center space-x-3 bg-gradient-to-r from-[#041812] to-[#251811] border-2 border-[#11caa0] hover:border-[#dfb667] p-3 rounded-full text-white shadow-2xl transition-all duration-300 animate-premium-wa group"
+       title="Asesoría Exclusiva por WhatsApp">
+        <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-xl text-white shadow-[0_0_15px_rgba(17,202,160,0.6)]">
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <div class="pr-3 text-left">
+            <span class="block text-[9px] uppercase tracking-widest text-[#dfb667] font-bold">Asesoría Directa</span>
+            <span class="block text-xs font-semibold text-white group-hover:text-[#dfb667] transition">+1 (472) 274-9633</span>
+        </div>
+    </a>
+
+    <!-- LÓGICA DEL SIMULADOR PREMIUM -->
+    <script>
+        function calcularTarifas() {
+            const sacosInput = document.getElementById('sacosCount');
+            const puertoSelect = document.getElementById('puertoDestino');
+            const transitoSelect = document.getElementById('tipoTransito');
+
+            // Parámetros de entrada
+            const sacos = Math.max(1, parseInt(sacosInput.value) || 0);
+            const precioBasePorSaco = parseFloat(puertoSelect.options[puertoSelect.selectedIndex].getAttribute('data-base'));
+            const transito = transitoSelect.value;
+
+            // Peso Neto Colombiano: Cada saco de café verde pesa exactamente 70 kg netos
+            const pesoNeto = sacos * 70;
+
+            // Cálculo del costo de transporte marítimo base vs aéreo
+            let costoFleteBase = sacos * precioBasePorSaco;
+            let tiempoEst = "12 - 14 Días";
+
+            if (transito === 'aereo') {
+                // Multiplicador premium por transporte áereo expreso
+                costoFleteBase = costoFleteBase * 3.8;
+                tiempoEst = "3 - 5 Días (Express)";
+            } else {
+                // Ajuste de tiempos aproximados según puerto
+                if (puertoSelect.value === 'ny') {
+                    tiempoEst = "16 - 18 Días";
+                } else if (puertoSelect.value === 'houston') {
+                    tiempoEst = "10 - 12 Días";
+                }
+            }
+
+            // Gastos fijos logísticos de origen (Aduana, Federación de Cafeteros de Colombia, FDA, documentación de origen)
+            const gastoFijoOrigen = 350.00; 
+
+            // Cálculo final
+            const granTotal = costoFleteBase + gastoFijoOrigen;
+
+            // Renderizar resultados en la interfaz con formateo internacional elegante
+            document.getElementById('valPeso').innerText = pesoNeto.toLocaleString('es-CO') + " kg";
+            document.getElementById('valTiempo').innerText = tiempoEst;
+            document.getElementById('valFlete').innerText = "$ " + costoFleteBase.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD";
+            document.getElementById('valLogistica').innerText = "$ " + gastoFijoOrigen.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD";
+            document.getElementById('valTotal').innerText = "$ " + granTotal.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " USD";
+        }
+
+        // Ejecutar cálculo automático al inicio
+        window.onload = calcularTarifas;
+    </script>
+</body>
+</html>
+
